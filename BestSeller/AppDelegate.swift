@@ -13,9 +13,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Setting up window and intial view controller
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = UINavigationController(rootViewController: CategoriesViewController())
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        // get rid of black bar underneath navbar
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        
+        UINavigationBar.appearance().barTintColor = appBaseColor
+        UINavigationBar.appearance().tintColor = navigationBarTintColor
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: navigationBarTitleTextColor]
+        UINavigationBar.appearance().isTranslucent = false
+        
         return true
     }
 
@@ -42,5 +58,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+private var firstLaunch : Bool = false
+
+extension UIApplication{
+    
+    // check for is first launch - only true on first invocation after app install, false on all further invocations
+    
+    static func isFirstLaunch() -> Bool {
+        
+        let hasBeenLaunchedBeforeFlag = "hasBeenLaunchedBeforeFlag"
+        let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunchedBeforeFlag)
+        if (isFirstLaunch) {
+            firstLaunch = isFirstLaunch
+            UserDefaults.standard.set(true, forKey: hasBeenLaunchedBeforeFlag)
+        }
+        return firstLaunch || isFirstLaunch
+    }
+    
+    static func setupDefaultValues() {
+        //setting defaults only on the first launch of the app
+        if UIApplication.isFirstLaunch(){
+            //set distance
+            UserDefaults.standard.set(FilterKeyValues.Rank.rawValue, forKey: filterKey)
+        }
+    }
+    
 }
 

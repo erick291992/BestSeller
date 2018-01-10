@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookViewController" customModule="BestSeller" customModuleProvider="target">
+            <connections>
+                <outlet property="authorLabel" destination="wOS-Ff-dyh" id="qUS-jn-X9F"/>
+                <outlet property="bookImageView" destination="3Jd-DB-ScF" id="mSR-kc-vo4"/>
+                <outlet property="descriptionTextView" destination="9bf-pr-3eJ" id="wSQ-0D-ay0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BookDefault" translatesAutoresizingMaskIntoConstraints="NO" id="3Jd-DB-ScF">
+                    <rect key="frame" x="123.66666666666669" y="36" width="128" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="KNi-k9-Lxa"/>
+                        <constraint firstAttribute="width" constant="128" id="VAP-5l-o8r"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOS-Ff-dyh">
+                    <rect key="frame" x="8" y="172" width="359" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9bf-pr-3eJ">
+                    <rect key="frame" x="8" y="193" width="359" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="NoC-35-sx0"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9bf-pr-3eJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="JQ5-pW-ZGt"/>
+                <constraint firstItem="wOS-Ff-dyh" firstAttribute="top" secondItem="3Jd-DB-ScF" secondAttribute="bottom" constant="8" id="Nr8-jo-b6E"/>
+                <constraint firstItem="9bf-pr-3eJ" firstAttribute="top" secondItem="wOS-Ff-dyh" secondAttribute="bottom" id="bf0-k3-EPa"/>
+                <constraint firstItem="3Jd-DB-ScF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="h6e-mt-1Fu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9bf-pr-3eJ" secondAttribute="trailing" constant="8" id="pjm-rb-m0r"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="3Jd-DB-ScF" secondAttribute="top" constant="8" id="y6A-LN-Daq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wOS-Ff-dyh" secondAttribute="trailing" constant="8" id="yBy-M4-mHk"/>
+                <constraint firstItem="wOS-Ff-dyh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="yEg-Lj-ydC"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="BookDefault" width="900" height="600"/>
+    </resources>
+</document>
